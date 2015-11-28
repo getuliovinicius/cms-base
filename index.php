@@ -47,7 +47,7 @@ include 'include/geral/php/cabecalho.php';
 				<h1>CMS-Base</h1>
 				<h2>Site em Construção</h2>
 			</hgroup>
-			<p><a href="/cms-base/administracao">Administracao</a></p>
+			<p><a href="/cms-base/administracao">ADMINISTRAÇÃO</a></p>
 			<!-- InstanceEndEditable -->
 		</section>
 		<aside id="conteudoLateral">
