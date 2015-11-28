@@ -1,0 +1,43 @@
+########################################################
+## Site - CMS - Teste 
+## DIRETORIO /site-cms-teste/adminsitracao
+## CRIACAO 12/05/2012
+########################################################
+
+## REDIRECIONAMENTOS - INICIO
+
+<IfModule mod_rewrite.c>
+
+#
+## "Habilitar o mod_rewrite"
+#
+
+RewriteEngine On
+
+#
+## "condicoes preliminares"
+#
+
+#RewriteBase /site-cms-teste/administracao/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#
+## "PAGINAS DA ADMINISTRACAO"
+#
+
+RewriteRule ^(.*)$ index.php?setModulo=$1 [L]
+
+#
+## "diretorios que não devem ser exibidos na administracao"
+#
+
+RewriteRule ^css/$ nao-encontrado.php
+RewriteRule ^envio/$ nao-encontrado.php
+RewriteRule ^login/css/$ nao-encontrado.php
+RewriteRule ^modulos/$ nao-encontrado.php
+RewriteRule ^modulos/(.*\.php)$ index.php?setPagina=$1 [L]
+
+</IfModule>
+
+## REDIRECIONAMENTOS - FIM

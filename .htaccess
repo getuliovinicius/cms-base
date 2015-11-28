@@ -1,0 +1,43 @@
+################ CMS-Base /cms-base ###################
+
+<IfModule mod_rewrite.c>
+
+#
+## "Habilitar o mod_rewrite"
+#
+
+RewriteEngine on
+
+#
+## "paginas nao encontradas"
+#
+
+ErrorDocument 404 /cms-base/nao-encontrado.php
+
+#
+## "diretorios que não devem ser exibidos no site"
+#
+
+RewriteRule ^css/$ nao-encontrado.php
+RewriteRule ^envio/$ nao-encontrado.php
+RewriteRule ^imagens/$ nao-encontrado.php
+RewriteRule ^imagens/administracao/$ nao-encontrado.php
+RewriteRule ^imagens/administracao/icones/$ nao-encontrado.php
+RewriteRule ^imagens/site/$ nao-encontrado.php
+RewriteRule ^imagens/usuarios/$ nao-encontrado.php
+RewriteRule ^include/$ nao-encontrado.php
+RewriteRule ^include/administracao/html/$ nao-encontrado.php
+RewriteRule ^include/administracao/php/$ nao-encontrado.php
+RewriteRule ^include/documentacao/html/$ nao-encontrado.php
+RewriteRule ^include/documentacao/php/$ nao-encontrado.php
+RewriteRule ^include/geral/html/$ nao-encontrado.php
+RewriteRule ^include/geral/php/$ nao-encontrado.php
+RewriteRule ^include/login/html/$ nao-encontrado.php
+RewriteRule ^include/login/php/$ nao-encontrado.php
+RewriteRule ^include/site/html/$ nao-encontrado.php
+RewriteRule ^include/site/php/$ nao-encontrado.php
+RewriteRule ^js/$ nao-encontrado.php
+RewriteRule ^js/administracao/$ nao-encontrado.php
+RewriteRule ^js/site/$ nao-encontrado.php
+
+</IfModule>

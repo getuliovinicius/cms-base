@@ -1,0 +1,249 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* ELEMENTOS HTML */
+
+/* texto */
+* {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	background-color: #EEE;
+	outline: 0;
+	text-align: justify;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 12px;
+	font-weight: inherit;
+	font-style: inherit;
+	line-height: 180%;
+	color: #666;
+	vertical-align: baseline;
+}
+header, section, footer, article, nav, figure {
+	display: block;
+}
+/* cabecalhos */
+h1, h2, h3, p {
+	margin: 10px;
+	padding: 0px;
+}
+h1 {
+	font-size: 18px;
+	color: #666;
+}
+h2 {
+	font-size: 16px;
+	color: #666;
+}
+h3 {
+	font-size: 14px;
+	color: #666;
+}
+/* listas */
+ul, ol {
+	display: block;
+	margin: 10px;
+	padding: 0px;
+	list-style-position: inside;
+}
+li {
+	margin: 0px;
+	padding: 0px;
+}
+/* links */
+a:link, a:visited {
+	color: #09C;
+	text-decoration: none;
+}
+a:hover, a:active {
+	color: #069;
+	text-decoration: underline;
+}
+/* imagens */
+img {
+	border: none;
+}
+a img {
+	border: none;
+}
+/* formularios */
+input[type=email], input[type=number], input[type=password], input[type=tel], input[type=text], input[type=url], textarea, select {
+	display: inline-block;
+	padding: 5px;
+	background-color: #F6F6F6;
+    border: 1px solid #AAA;
+}
+input[type=email]:hover, input[type=number]:hover, input[type=password]:hover, input[type=tel]:hover, input[type=text]:hover, input[type=url]:hover, textarea:hover, select:hover {
+	background-color: #FFF;
+	border: 1px solid #CCC;
+}
+input[type=email]:focus, input[type=number]:focus, input[type=password]:focus, input[type=tel]:focus, input[type=text]:focus, input[type=url]:focus, textarea:focus, select:focus {
+	border: 1px solid #09C;
+}
+input[type=email], input[type=password], input[type=text], input[type=url], select {
+	width: 50%;
+}
+input[type=radio] {
+	margin: 5px;
+	vertical-align: bottom;
+}
+input[type=checkbox] {
+	margin: 5px;
+	vertical-align: bottom;
+}
+textarea {
+	width: 95%;
+}
+input[type=submit] {
+	padding: 5px;
+	background-color: #DDD;
+    border: 2px solid #666;
+	border-radius: 3px;
+	font-weight: bold;
+	color: #666;
+}
+input[type=submit]:hover {
+	background-color: #C5D6FE;
+}
+input[type=submit]:focus {
+	background-color: #C0CDFE;
+    border: 2px solid #09C;
+}
+fieldset {
+	width: auto;
+	margin: 10px;
+	padding: 10px;
+	background-color: #F6F6F6;
+    border: 1px solid #AAA;
+}
+legend {
+	font-size: 14px;
+	font-weight: bold;
+}
+/* tabelas */
+table {
+	width: 100%;
+}
+th {
+	padding: 3px;
+	background-color: #DDD;
+	border-bottom: 1px solid #999;
+}
+td {
+	padding: 3px;
+	border-bottom: 1px solid #CCC;
+}
+table img {
+	padding: 3px;
+	vertical-align: middle;
+}
+
+/* MONTAGEM DA PÁGINA */
+
+/* caixas de conteudo */
+#todaPagina {
+	width: 820px;
+	min-height: 100%;
+	position: relative;
+	overflow: hidden;
+	margin: 0px auto;
+	background: inherit;
+	
+}
+#cabecalho {
+	width: 790px;
+	overflow: hidden;
+	margin: 0px auto;
+	padding: 10px;
+	background-color: #444;
+	border: 1px solid #777;
+	word-spacing: 3px;
+	color: #DDD;
+} 
+#conteudo {
+	width: 790px;
+	overflow: hidden;
+	margin: 5px auto;
+	padding: 10px;
+	background-color: #FFF;
+	border: 1px solid #777;
+} 
+#rodape {
+	width: 790px;
+	overflow: hidden;
+	margin: 5px auto;
+	padding: 10px;
+	background-color: #FFF;
+	border: 1px solid #777;
+	text-align: center;
+	line-height: normal;
+}
+
+/* ESTILOS DOS ELEMENTOS ESPECIFICOS */
+
+/* mensagens de retorno */
+.msgErro {
+	width: auto;
+	overflow: hidden;
+	background-color: #FFE8EA; 
+	border: 1px solid #F00;
+	text-align: center;
+	font-size: 12px;
+	color: #F00;
+}
+.msgOk {
+	width: auto;
+	overflow: hidden;
+	background-color: #E9F9E6;
+	border: 1px solid #090;
+	text-align: center;
+	font-size: 12px;
+	color: #090;
+}
+/* personalizacao do cabecalho */
+#cabecalho a:link, #cabecalho a:visited {
+	color: #CCC;
+}
+#cabecalho a:hover, #cabecalho a:active {
+	color: #FFF;
+}
+#cabecalho h1, #cabecalho h2 {
+	color: #DDD;
+}
+#cabecalho img {
+	background-color: #F00;
+	vertical-align: text-top;
+}
+/* personalizacao do conteudo da aplicacao */
+#conteudo h1 {
+	border-bottom: 2px solid  #09F;
+}
+#conteudo h2 {
+	border-bottom: 1px solid #09F;	
+}
+.formLinhas {
+	width: auto;
+	display: block;
+	overflow: hidden;
+}
+.tableBox {
+	width: auto;
+	display: block;
+	overflow: hidden;
+	padding: 10px;
+}
+/* estilo para paragrafos avulsos */
+.fontPequena {
+	font-size: 12px;
+	color: #999;
+}
+.fontPequena a:link, .fontPequena a:visited {
+	color: #666;
+}
+.fontPequena a:hover, .fontPequena a:active {
+	color: #333;
+}
