@@ -24,7 +24,7 @@ $dataCompleta = strftime("%A, %d de %B de %Y");
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 <meta name="robots" content="noindex,nofollow" />
-<link href="/cms-base/instalacao/css/estilo.css" rel="stylesheet" type="text/css" media="screen">
+<link href="/instalacao/css/estilo.css" rel="stylesheet" type="text/css" media="screen">
 </head>
 <body>
 <div id="todaPagina">
@@ -50,7 +50,7 @@ if (isset($_COOKIE['msgErro'])) {
 	echo "<p>";
 }
 ?>
-		<form action="/cms-base/instalacao/cfg-titulo-site.php" method="post" name="titulo" id="titulo">
+		<form action="/instalacao/cfg-titulo-site.php" method="post" name="titulo" id="titulo">
 			<div class="formLinhas">
 				<p>
 					<label for="siteTitulo"><strong>(*) Título:</strong></label><br>

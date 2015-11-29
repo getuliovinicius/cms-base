@@ -25,7 +25,7 @@ $dataCompleta = strftime("%A, %d de %B de %Y");
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 <meta name="robots" content="noindex,nofollow" />
-<link href="/cms-base/instalacao/css/estilo.css" rel="stylesheet" type="text/css" media="screen">
+<link href="/instalacao/css/estilo.css" rel="stylesheet" type="text/css" media="screen">
 </head>
 <body>
 <div id="todaPagina">
@@ -60,7 +60,7 @@ if (isset($_COOKIE['msgErro'])) {
 			<li>Um <strong>banco de dados</strong> limpo em um servidor <strong>MySQL</strong> e um <strong>usuário</strong> com todas as permissões de acesso a este banco.</li>
 			<li>Um endereço de <strong>e-mail </strong>válido para o administrador do gerenciador de conteúdo.</li>
 		</ol>
-		<p><strong><a href="/cms-base/instalacao/primeira-parte.php">SE TUDO ESTIVE OK, CLIQUE AQUI PARA INICIAR A INSTALAÇÃO.</a></strong></p>
+		<p><strong><a href="/instalacao/primeira-parte.php">SE TUDO ESTIVE OK, CLIQUE AQUI PARA INICIAR A INSTALAÇÃO.</a></strong></p>
 		<p><strong>Observação 1:</strong> Se por ventura for nescessário reiniciar a instalação antes de sua conclusão, você deve certificar-se que o banco de dados que irá receber a instalação esteja limpo.</p>
 		<p><strong>Observação 2:</strong> Caso queira reinstalar o gerenciador futuramente, todas as configurações atuais serão perdidas, e somente backups manuais poderam restaura-las.</p>
 		<!-- InstanceEndEditable -->
