@@ -1,4 +1,14 @@
 <?php
+
+// CHECA SE O SITE JÁ FOI INSTALADO ##########################################################
+
+if (file_exists($_SERVER['DOCUMENT_ROOT'] . "/cms-base.htaccess") == true) {
+	header('Location: /instalacao/');
+	exit;	
+}
+
+// ###########################################################################################
+
 // DEFINICAO DO FUZO E DA DATA ###############################################################
 
 date_default_timezone_set('America/Sao_Paulo');
