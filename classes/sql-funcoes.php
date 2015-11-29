@@ -38,7 +38,7 @@ class sqlFuncoes extends mysqlConecta {
 		$sql = $this->getSql();
 		$conexao = $this->getConexao();
 		$query = mysqli_query($conexao, $sql, MYSQLI_USE_RESULT) or die ("<strong>Erro ao executar query: </strong>" . $sql . "<br>" . mysqli_error($conexao));
-		$resultado = mysqli_result($query, 0, $campo);
+		$resultado = mysql_result($query, 0, $campo);
 		mysqli_free_result($query);
 		return $resultado;
 	}
@@ -51,7 +51,7 @@ class sqlFuncoes extends mysqlConecta {
 		$conexao = $this->getConexao();
 		$query = mysqli_query($conexao, $sql, MYSQLI_USE_RESULT) or die ("<strong>Erro ao executar query: </strong>" . $sql . "<br>" . mysqli_error($conexao));
 		if ($insertId) {
-			return mysqli_insert_id();
+			return mysqli_insert_id($conexao);
 		}
 	}
 	
