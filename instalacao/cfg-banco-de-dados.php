@@ -98,25 +98,25 @@ if (count($erro) != 0)  {
 	exit;
 } else {
 	// testa a conexao com o servidor do banco de dados
-	$testeConexao = mysql_connect($servidor, $usuario, $senha);
+	$testeConexao = mysqli_connect($servidor, $usuario, $senha, $banco);
 	if (!$testeConexao) {
-		$erro['banco'] = "Não foi poss&iacute;vel conectar ao servidor do Banco de Dados: " . mysql_error();
+		$erro['banco'] = "Não foi poss&iacute;vel conectar ao servidor do Banco de Dados: " . mysqli_error();
 		setcookie('msgErro[banco]', $erro['banco'], time() + 10, '/instalacao/segunda-parte.php');
 		setcookie('instalacao', $siteTitulo, time() + 10, '/instalacao/segunda-parte.php');
 		header('Location: /instalacao/segunda-parte.php');
 		exit;
 	}
 	// testa a selecao da base de dados informada
-	$testeBase = mysql_select_db($banco);
+	/*$testeBase = mysqli_select_db($banco);
 	if (!$testeBase) {
-		$erro['banco'] = "Não foi poss&iacute;vel conectar ao Banco de Dados informado: " . mysql_error();
+		$erro['banco'] = "Não foi poss&iacute;vel conectar ao Banco de Dados informado: " . mysqli_error();
 		setcookie('msgErro[banco]', $erro['banco'], time() + 10, '/instalacao/segunda-parte.php');
 		setcookie('instalacao', $siteTitulo, time() + 10, '/instalacao/segunda-parte.php');
 		header('Location: /instalacao/segunda-parte.php');
 		exit;
-	}
+	}*/
 }
-mysql_close($testeConexao);
+mysqli_close($testeConexao);
 
 // ###########################################################################################
 
@@ -149,9 +149,9 @@ $mysqlConecta .= "\n";
 $mysqlConecta .= "	// conecta o banco de dados\n";
 $mysqlConecta .= "	public function conecta() {\n";
 $mysqlConecta .= "		try {\n";
-$mysqlConecta .= "			$" . "conexao = mysql_connect($" . "this->getHost(), $" . "this->getUsuario(), $" . "this->getSenha());\n";
-$mysqlConecta .= "			mysql_query(\"SET NAMES 'utf8'\", $" . "conexao);\n";
-$mysqlConecta .= "			$" . "bancoDeDados = mysql_select_db($" . "this->getBanco(),$" . "conexao);\n";
+$mysqlConecta .= "			$" . "conexao = mysqli_connect($" . "this->getHost(), $" . "this->getUsuario(), $" . "this->getSenha(), $" . "this->getBanco());\n";
+$mysqlConecta .= "			//mysqli_query($" . "conexao);\n";
+$mysqlConecta .= "			//$" . "bancoDeDados = mysqli_select_db($" . "this->getBanco(),$" . "conexao);\n";
 $mysqlConecta .= "			$" . "this->setConexao($" . "conexao);\n";
 $mysqlConecta .= "			return true;\n";
 $mysqlConecta .= "		} catch (Exception $" . "erro) {\n";
@@ -162,7 +162,7 @@ $mysqlConecta .= "	}\n";
 $mysqlConecta .= "\n";
 $mysqlConecta .= "	// desconecta o banco de dados\n";
 $mysqlConecta .= "	public function desconecta() {\n";
-$mysqlConecta .= "		mysql_close($" . "this->getConexao());\n";
+$mysqlConecta .= "		mysqli_close($" . "this->getConexao());\n";
 $mysqlConecta .= "	}\n";
 $mysqlConecta .= "\n";
 $mysqlConecta .= "	// ENCAPSULAMENTOS\n";
@@ -171,15 +171,15 @@ $mysqlConecta .= "	private function setHost($" . "variavel) { $" . "this->mysqlH
 $mysqlConecta .= "	private function setUsuario($" . "variavel) { $" . "this->mysqlUsuario = $" . "variavel; }\n";
 $mysqlConecta .= "	private function setSenha($" . "variavel) { $" . "this->mysqlSenha = $" . "variavel; }\n";
 $mysqlConecta .= "	private function setBanco($" . "variavel) { $" . "this->mysqlBanco = $" . "variavel; }\n";
-$mysqlConecta .= "	private function setConexao($" . "variavel) { $" . "this->conexao = $" . "variavel; }\n";
 $mysqlConecta .= "	private function setErro($" . "variavel) { $" . "this->erro = $" . "variavel; }\n";
+$mysqlConecta .= "	public function setConexao($" . "variavel) { $" . "this->conexao = $" . "variavel; }\n";
 $mysqlConecta .= "	// get\n";
 $mysqlConecta .= "	private function getHost() { return $" . "this->mysqlHost; }\n";
 $mysqlConecta .= "	private function getUsuario() { return $" . "this->mysqlUsuario; }\n";
 $mysqlConecta .= "	private function getSenha() { return $" . "this->mysqlSenha; }\n";
 $mysqlConecta .= "	private function getBanco() { return $" . "this->mysqlBanco; }\n";
-$mysqlConecta .= "	private function getConexao() { return $" . "this->conexao; }\n";
 $mysqlConecta .= "	private function getErro() { return $" . "this->erro; }\n";
+$mysqlConecta .= "	public function getConexao() { return $" . "this->conexao; }\n";
 $mysqlConecta .= "}\n";
 $mysqlConecta .= "?>";
 $arquivoConecta = fopen($_SERVER['DOCUMENT_ROOT'] . "/classes/mysql-conecta.php","w+"); 
