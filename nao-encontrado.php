@@ -22,7 +22,7 @@ include 'include/geral/php/cabecalho.php';
 <title><?php echo $siteTitulo; ?>  | Não encontrado</title>
 <!-- InstanceEndEditable -->
 <meta name="robots" content="index,follow" />
-<link rel="stylesheet" type="text/css" media="screen" href="/cms-base/css/estilo.css"/>
+<link rel="stylesheet" type="text/css" media="screen" href="/css/estilo.css"/>
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 </head>
@@ -48,7 +48,7 @@ include 'include/geral/php/cabecalho.php';
 				<h2>Lamentamos</h2>
 			</hgroup>
 			<p>N&atilde;o foi poss&iacute;vel localizar a p&aacute;gina: &quot; <em><?php echo "http://" . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?></em> &quot;. </p>
-			<p><a href="/cms-base">Página Inicial</a></p>
+			<p><a href="/">Página Inicial</a></p>
 			<!-- InstanceEndEditable -->
 		</section>
 		<aside id="conteudoLateral">

@@ -22,7 +22,7 @@ include 'include/geral/php/cabecalho.php';
 <title><?php echo $siteTitulo . $siteSlogan; ?></title>
 <!-- InstanceEndEditable -->
 <meta name="robots" content="index,follow" />
-<link rel="stylesheet" type="text/css" media="screen" href="/cms-base/css/estilo.css"/>
+<link rel="stylesheet" type="text/css" media="screen" href="/css/estilo.css"/>
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 </head>
@@ -47,7 +47,7 @@ include 'include/geral/php/cabecalho.php';
 				<h1>CMS-Base</h1>
 				<h2>Site em Construção</h2>
 			</hgroup>
-			<p><a href="/cms-base/administracao">Administração</a></p>
+			<p><a href="/administracao">Administração</a></p>
 			<!-- InstanceEndEditable -->
 		</section>
 		<aside id="conteudoLateral">
