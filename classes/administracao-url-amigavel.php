@@ -11,7 +11,7 @@ class urlAmigavel {
 	public function carregaModulo() {
 		// lista as paginas existentes
 		$modulosExistentes = array();
-		if ($diretorio = opendir($_SERVER['DOCUMENT_ROOT'] . "/cms-base/administracao/modulos/")) {
+		if ($diretorio = opendir($_SERVER['DOCUMENT_ROOT'] . "/administracao/modulos/")) {
 			while (false !== ($arquivo = readdir($diretorio))) {
 				if (is_file("modulos/" . $arquivo) and preg_match("/php/i", $arquivo)) {
 					$modulosExistentes[] = substr($arquivo, 0, -4);

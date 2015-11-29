@@ -5,8 +5,8 @@ if (!isset($_SESSION)) {
 }
 
 if (!isset($_SESSION['loginSitecmsADM'])) {
-	setcookie('erroLogin', 'Autenticação nescessária.', time() + 10, '/cms-base/administracao/login/');
-	header('Location: /cms-base/administracao/login');
+	setcookie('erroLogin', 'Autenticação nescessária.', time() + 10, '/administracao/login/');
+	header('Location: /administracao/login');
 	exit;
 } elseif (!isset($sessaoId)) {
 	require_once '../include/login/php/login-atualiza.php';
@@ -43,7 +43,7 @@ $dataCompleta = strftime("%A, %d de %B de %Y");
 <title><?php echo $siteTitulo; ?> - Administração | Não encontrado</title>
 <!-- InstanceEndEditable -->
 <meta name="robots" content="noindex,nofollow" />
-<link rel="stylesheet" type="text/css" media="screen" href="/cms-base/administracao/css/estilo.css"/>
+<link rel="stylesheet" type="text/css" media="screen" href="/administracao/css/estilo.css"/>
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 </head>
@@ -53,7 +53,7 @@ $dataCompleta = strftime("%A, %d de %B de %Y");
 	<!-- INICIO DO CABECALHO -->
 	<header id="cabecalho">
 		<div id="cabecalhoLogo">
-			<p><strong><a href="/cms-base/administracao" title="Página inicial da administração do site."><?php echo $siteTitulo; ?></a></strong></p>
+			<p><strong><a href="/administracao" title="Página inicial da administração do site."><?php echo $siteTitulo; ?></a></strong></p>
 		</div>
 		<div id="cabecalhoLogin">
 			<!-- InstanceBeginEditable name="cabecalhoLogin" -->

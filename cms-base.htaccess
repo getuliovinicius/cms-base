@@ -12,7 +12,7 @@ RewriteEngine on
 ## "paginas nao encontradas"
 #
 
-ErrorDocument 404 /cms-base/nao-encontrado.php
+ErrorDocument 404 /nao-encontrado.php
 
 #
 ## "diretorios que não devem ser exibidos no site"

@@ -10,8 +10,8 @@ ATUALIZACAO:	29/05/2012
 
 // retorna mensagem de erro
 if (getenv("REQUEST_METHOD") != "POST") {
-	setcookie('erroLogin', 'Autenticação necessária.', time() + 10, '/cms-base/administracao/login/');
-	header('Location: /cms-base/administracao/login/');
+	setcookie('erroLogin', 'Autenticação necessária.', time() + 10, '/administracao/login/');
+	header('Location: /administracao/login/');
 	exit;
 }
 
@@ -31,8 +31,8 @@ if (ctype_alpha($usrLogin) and ctype_alnum($usrSenha) and $acao == 'login-cms-ba
 	$usrSenha = md5($usrSenha);
 } else {
 	session_destroy();
-	setcookie('erroLogin', 'Usu&aacute;rio ou senha incorreto(s).', time() + 10, '/cms-base/administracao/login/');
-	header('Location: /cms-base/administracao/login/');
+	setcookie('erroLogin', 'Usu&aacute;rio ou senha incorreto(s).', time() + 10, '/administracao/login/');
+	header('Location: /administracao/login/');
 	exit;
 }
 
@@ -52,8 +52,8 @@ unset($loginUsuario);
 // CHECA A VALIDADE DO LOGIN E REGISTRA O ACESSO #############################################
 
 if (empty($usrDados)) {
-	setcookie('erroLogin', 'Usuário ou senha incorreto(s).', time() + 10, '/cms-base/administracao/login/');
-	header('Location: /cms-base/administracao/login/');
+	setcookie('erroLogin', 'Usuário ou senha incorreto(s).', time() + 10, '/administracao/login/');
+	header('Location: /administracao/login/');
 	exit;
 } else {
 	$loginUsuario = new loginUsuario();
@@ -100,7 +100,7 @@ $_SESSION['loginSitecmsADM'] = array('sessaoId' => $sessaoId, 'sessaoLogin' => $
 
 // REDIRECIONA PARA A PAGINA DA ADMINISTRACAO ################################################
 
-header('Location: /cms-base/administracao');
+header('Location: /administracao');
 exit;
 
 // ###########################################################################################

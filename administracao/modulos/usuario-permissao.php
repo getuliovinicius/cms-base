@@ -3,8 +3,8 @@
 
 if (!in_array(5, $sessaoPermissoes)) {
 	// retorna mensagem de erro
-	setcookie('msgErro[privilegio]', 'Acesso restrito a usuários com permissão.', time() + 10, '/cms-base/administracao/usuarios');
-	header('Location: /cms-base/administracao/usuarios');
+	setcookie('msgErro[privilegio]', 'Acesso restrito a usuários com permissão.', time() + 10, '/administracao/usuarios');
+	header('Location: /administracao/usuarios');
 	exit;
 }
 
@@ -24,8 +24,8 @@ $sqlFuncoes = new sqlFuncoes();
 $sqlFuncoes->setSql($sqlUsuario);
 $usrDados = $sqlFuncoes->listaRegistros(true);
 if (empty($usrDados)) {
-	setcookie('msgErro[usrId]', 'Registro do usuário não encontrado.', time() + 10, '/cms-base/administracao/usuarios');
-	header('Location: /cms-base/administracao/usuarios');
+	setcookie('msgErro[usrId]', 'Registro do usuário não encontrado.', time() + 10, '/administracao/usuarios');
+	header('Location: /administracao/usuarios');
 	exit;
 }
 unset($sqlFuncoes);
@@ -103,9 +103,9 @@ $dataCompleta = strftime("%A, %d de %B de %Y");
 <title><?php echo $siteTitulo; ?> - Administração | Permissoes do usuário</title>
 <!-- InstanceEndEditable -->
 <meta name="robots" content="noindex,nofollow" />
-<link rel="stylesheet" type="text/css" media="screen" href="/cms-base/administracao/css/estilo.css"/>
+<link rel="stylesheet" type="text/css" media="screen" href="/administracao/css/estilo.css"/>
 <!-- InstanceBeginEditable name="head" -->
-<script type="text/javascript" src="/cms-base/js/administracao/menu-modulos.js"></script>
+<script type="text/javascript" src="/js/administracao/menu-modulos.js"></script>
 <!-- InstanceEndEditable -->
 </head>
 
@@ -114,7 +114,7 @@ $dataCompleta = strftime("%A, %d de %B de %Y");
 	<!-- INICIO DO CABECALHO -->
 	<header id="cabecalho">
 		<div id="cabecalhoLogo">
-			<p><strong><a href="/cms-base/administracao" title="Página inicial da administração do site."><?php echo $siteTitulo; ?></a></strong></p>
+			<p><strong><a href="/administracao" title="Página inicial da administração do site."><?php echo $siteTitulo; ?></a></strong></p>
 		</div>
 		<div id="cabecalhoLogin">
 			<!-- InstanceBeginEditable name="cabecalhoLogin" -->
@@ -136,9 +136,9 @@ $dataCompleta = strftime("%A, %d de %B de %Y");
 		<section id="conteudoAplicacao">
 			<!-- InstanceBeginEditable name="conteudoAplicacao" -->
 			<nav class="fontPequena">
-				<p><a href="/cms-base/administracao">Painel</a> &gt; <a href="/cms-base/administracao/usuarios">Usuários</a> &gt; Permissões do usuário</p>
+				<p><a href="/administracao">Painel</a> &gt; <a href="/administracao/usuarios">Usuários</a> &gt; Permissões do usuário</p>
 			</nav>
-			<h1><img src="/cms-base/imagens/administracao/icones/usuario-permissao.png" alt="Permissoes do usuário" width="16" height="16"> Permissões do usuário "<?php echo $usrDados[0]; ?>"</h1>
+			<h1><img src="/imagens/administracao/icones/usuario-permissao.png" alt="Permissoes do usuário" width="16" height="16"> Permissões do usuário "<?php echo $usrDados[0]; ?>"</h1>
 <?php
 // mensagens de confirmacao
 if (isset($_COOKIE['msgOk'])) {
@@ -153,7 +153,7 @@ if (isset($_COOKIE['msgErro'])) {
 	echo "<p>";
 }
 ?>
-			<form name="usuario-permissao" id="usuario-permissao" action="/cms-base/administracao/envio/usuario-permissao.php" method="post">
+			<form name="usuario-permissao" id="usuario-permissao" action="/administracao/envio/usuario-permissao.php" method="post">
 				<input type="hidden" name="usrId" id="usrId" value="<?php echo $usrId; ?>">
 <?php
 foreach ($permissoesPossiveis as $chave => $permissao) {

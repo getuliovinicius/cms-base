@@ -22,7 +22,7 @@ include '../include/geral/php/cabecalho.php';
 <title>CMS-Base - Documentação | Não encontrado</title>
 <!-- InstanceEndEditable -->
 <meta name="robots" content="noindex,nofollow" />
-<link rel="stylesheet" type="text/css" media="screen" href="/cms-base/documentacao/css/estilo.css"/>
+<link rel="stylesheet" type="text/css" media="screen" href="/documentacao/css/estilo.css"/>
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 </head>

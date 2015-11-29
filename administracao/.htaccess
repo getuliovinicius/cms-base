@@ -1,6 +1,6 @@
 ########################################################
 ## Site - CMS - Teste 
-## DIRETORIO /site-cms-teste/adminsitracao
+## DIRETORIO /adminsitracao
 ## CRIACAO 12/05/2012
 ########################################################
 
@@ -18,7 +18,7 @@ RewriteEngine On
 ## "condicoes preliminares"
 #
 
-#RewriteBase /site-cms-teste/administracao/
+#RewriteBase /administracao/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 

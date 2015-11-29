@@ -10,7 +10,7 @@ if (!isset($_SESSION)) {
 	session_start();
 }
 if (isset($_SESSION['loginSitecmsADM'])) {
-	header('Location: /cms-base/administracao');
+	header('Location: /administracao');
 	exit;
 } else {
 	session_destroy();
@@ -48,7 +48,7 @@ include '../../include/geral/php/cabecalho.php';
 <!-- InstanceEndEditable -->
 <!-- InstanceBeginEditable name="head" -->
 <meta name="robots" content="noindex,nofollow" />
-<link rel="stylesheet" type="text/css" media="screen" href="/cms-base/administracao/login/css/estilo.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="/administracao/login/css/estilo.css" />
 <!-- InstanceEndEditable -->
 </head>
 
@@ -66,7 +66,7 @@ include '../../include/geral/php/cabecalho.php';
 	<section id="conteudo">
 		<!-- InstanceBeginEditable name="formulario" -->
 		<fieldset id="formularioLogin">
-			<h1><img src="/cms-base/imagens/administracao/icones/login.png" width="16" height="16" alt="Login"> Login</h1>
+			<h1><img src="/imagens/administracao/icones/login.png" width="16" height="16" alt="Login"> Login</h1>
 <?php
 if (isset($_COOKIE['erroLogin'])) {
 	echo "<p class='msgErro'>";
@@ -74,7 +74,7 @@ if (isset($_COOKIE['erroLogin'])) {
 	echo "</p>";
 }
 ?>			
-			<form name="login" method="post" action="/cms-base/administracao/login/login.php">
+			<form name="login" method="post" action="/administracao/login/login.php">
 				<input type="hidden" name="acao" value="login-cms-base">
 				<div class="formLinhas">
 					<p>

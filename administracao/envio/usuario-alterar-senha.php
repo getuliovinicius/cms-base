@@ -7,8 +7,8 @@ if (!isset($_SESSION)) {
 // Checa a validade do login na classe loginUsuario
 require_once '../../classes/login-usuario.php';
 if (!loginUsuario::verificaLogin()) {
-	setcookie('erroLogin', 'Autenticação nescessária.', time() + 10, '/cms-base/administracao/login/');
-	header('Location: /cms-base/administracao/login');
+	setcookie('erroLogin', 'Autenticação nescessária.', time() + 10, '/administracao/login/');
+	header('Location: /administracao/login');
 } else {
 	require_once '../../include/login/php/login-atualiza.php';
 }
@@ -19,7 +19,7 @@ if (!loginUsuario::verificaLogin()) {
 
 if (getenv("REQUEST_METHOD") != "POST" or !$_POST['alterar-senha']) {
 	// retorna erro
-	header('Location: /cms-base/administracao/nao-encontrado');
+	header('Location: /administracao/nao-encontrado');
 	exit;
 }
 
@@ -29,7 +29,7 @@ if (getenv("REQUEST_METHOD") != "POST" or !$_POST['alterar-senha']) {
 
 if (empty($_POST['usrId']) or !ctype_digit($_POST['usrId'])) {
 	// retorna erro
-	header('Location: /cms-base/administracao/nao-encontrado');
+	header('Location: /administracao/nao-encontrado');
 	exit;
 } else {
 	$usrId = $_POST['usrId'];
@@ -41,8 +41,8 @@ if (empty($_POST['usrId']) or !ctype_digit($_POST['usrId'])) {
 
 if ($sessaoId != $usrId) {
 	// retorna mensagem de erro
-	setcookie('msgErro[privilegio]', 'Apenas o usu&aacute;rio da sess&atilde;o atual pode ter sua senha alterada no momento.', time() + 10, '/cms-base/administracao/usuarios');
-	header('Location: /cms-base/administracao/usuarios');
+	setcookie('msgErro[privilegio]', 'Apenas o usu&aacute;rio da sess&atilde;o atual pode ter sua senha alterada no momento.', time() + 10, '/administracao/usuarios');
+	header('Location: /administracao/usuarios');
 	exit;
 }
 
@@ -91,9 +91,9 @@ if (empty($_POST['usrSenha1']) or ($_POST['usrSenha1'] != $_POST['usrSenha2'])) 
 if (count($erro) != 0) {
 	// retorna msgErro
 	foreach ($erro as $idErro => $msgErro) {
-		setcookie("msgErro['$idErro']", $msgErro, time() + 10, '/cms-base/administracao/usuario-alterar-senha');
+		setcookie("msgErro['$idErro']", $msgErro, time() + 10, '/administracao/usuario-alterar-senha');
 	}
-	header('Location: /cms-base/administracao/usuario-alterar-senha');
+	header('Location: /administracao/usuario-alterar-senha');
 	exit;
 }	
 
@@ -117,8 +117,8 @@ unset($sqlFuncoes);
 
 // RETORNA PARA A PAGINA DE EDICAO DO USUARIO ################################################
 
-setcookie('msgOk', 'Altera&ccedil;&otilde;es na senha do usu&aacute;rio <strong>' . $sessaoUsuario . '</strong> realizada com sucesso.', time() + 10, '/cms-base/administracao/usuario-alterar-senha');
-header('Location: /cms-base/administracao/usuario-alterar-senha');
+setcookie('msgOk', 'Altera&ccedil;&otilde;es na senha do usu&aacute;rio <strong>' . $sessaoUsuario . '</strong> realizada com sucesso.', time() + 10, '/administracao/usuario-alterar-senha');
+header('Location: /administracao/usuario-alterar-senha');
 exit;
 
 // ###########################################################################################

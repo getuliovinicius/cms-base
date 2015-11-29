@@ -7,8 +7,8 @@ if (!isset($_SESSION)) {
 // Checa a validade do login na classe loginUsuario
 require_once '../../classes/login-usuario.php';
 if (!loginUsuario::verificaLogin()) {
-	setcookie('erroLogin', 'Autenticação nescessária.', time() + 10, '/cms-base/administracao/login/');
-	header('Location: /cms-base/administracao/login');
+	setcookie('erroLogin', 'Autenticação nescessária.', time() + 10, '/administracao/login/');
+	header('Location: /administracao/login');
 } else {
 	require_once '../../include/login/php/login-atualiza.php';
 }
@@ -19,7 +19,7 @@ if (!loginUsuario::verificaLogin()) {
 
 if (getenv("REQUEST_METHOD") != "POST" or !$_POST['editar-foto']) {
 	// retorna erro
-	header('Location: /cms-base/administracao/nao-encontrado');
+	header('Location: /administracao/nao-encontrado');
 	exit;
 }
 
@@ -33,8 +33,8 @@ if (in_array(6, $sessaoPermissoes) and isset($_POST['usrId']) and ctype_digit($_
 	$usrId = $_POST['usrId'];
 } else {
 	// retorna mensagem de erro
-	setcookie('msgErro[privilegio]', 'Acesso restrito a usuários com permissão.', time() + 10, '/cms-base/administracao/usuarios');
-	header('Location: /cms-base/administracao/usuarios');
+	setcookie('msgErro[privilegio]', 'Acesso restrito a usuários com permissão.', time() + 10, '/administracao/usuarios');
+	header('Location: /administracao/usuarios');
 	exit;
 }
 
@@ -97,9 +97,9 @@ if ($testeFoto == FALSE) {
 if (count($erro) != 0) {
 	// retorna msgErro
 	foreach ($erro as $idErro => $msgErro) {
-		setcookie("msgErro['$idErro']", $msgErro, time() + 10, '/cms-base/administracao/usuario-editar/' . $usrId);
+		setcookie("msgErro['$idErro']", $msgErro, time() + 10, '/administracao/usuario-editar/' . $usrId);
 	}
-	header("Location: /cms-base/administracao/usuario-editar/" . $usrId);
+	header("Location: /administracao/usuario-editar/" . $usrId);
 	exit;
 }	
 
@@ -110,7 +110,7 @@ if (count($erro) != 0) {
 $fotoNome = explode('.', $usrFoto["name"]);
 $fotoNome = strtolower($usrApelidourl . "-" . time() . "." . $fotoNome[1]);
 $fotoDiretorio = $_SERVER['DOCUMENT_ROOT'] . "cms-base/imagens/usuarios/" . $fotoNome;
-$fotoEndereco = "/cms-base/imagens/usuarios/" . $fotoNome;
+$fotoEndereco = "/imagens/usuarios/" . $fotoNome;
 
 // ###########################################################################################
 
@@ -144,8 +144,8 @@ move_uploaded_file($usrFoto["tmp_name"], $fotoDiretorio);
 
 // RETORNA PARA A PAGINA DE EDICAO DO USUARIO ################################################
 
-setcookie('msgOk', 'A <strong>FOTO</strong> do usu&aacute;rio foi alterada com sucesso.<br />', time() + 10, '/cms-base/administracao/usuario-editar/' . $usrId);
-	header("Location: /cms-base/administracao/usuario-editar/" . $usrId);
+setcookie('msgOk', 'A <strong>FOTO</strong> do usu&aacute;rio foi alterada com sucesso.<br />', time() + 10, '/administracao/usuario-editar/' . $usrId);
+	header("Location: /administracao/usuario-editar/" . $usrId);
 exit;
 
 ?>

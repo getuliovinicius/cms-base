@@ -17,8 +17,8 @@ if ($_SESSION['loginSitecmsADM']['sessaoChave'] != md5($sessaoLogin . $sessaoHor
 	unset($_SESSION['loginSitecmsADM']);
 	session_unset();
 	session_destroy();
-	setcookie('erroLogin', 'A SESSÃO EXPIROU.', time() + 10, '/cms-base/administracao/login/');
-	header('Location: /cms-base/administracao/login');
+	setcookie('erroLogin', 'A SESSÃO EXPIROU.', time() + 10, '/administracao/login/');
+	header('Location: /administracao/login');
 	exit;
 }
 $sessaoHora = time();

@@ -7,8 +7,8 @@ if (!isset($_SESSION)) {
 // Checa a validade do login na classe loginUsuario
 require_once '../../classes/login-usuario.php';
 if (!loginUsuario::verificaLogin()) {
-	setcookie('erroLogin', 'Autenticação nescessária.', time() + 10, '/cms-base/administracao/login/');
-	header('Location: /cms-base/administracao/login');
+	setcookie('erroLogin', 'Autenticação nescessária.', time() + 10, '/administracao/login/');
+	header('Location: /administracao/login');
 } else {
 	require_once '../../include/login/php/login-atualiza.php';
 }
@@ -19,8 +19,8 @@ if (!loginUsuario::verificaLogin()) {
 
 if (!in_array(7, $sessaoPermissoes)) {
 	// retorna mensagem de erro
-	setcookie('msgErro[privilegio]', 'Acesso restrito a usuários com permissão.', time() + 10, '/cms-base/administracao/');
-	header('Location: /cms-base/administracao/');
+	setcookie('msgErro[privilegio]', 'Acesso restrito a usuários com permissão.', time() + 10, '/administracao/');
+	header('Location: /administracao/');
 	exit;
 }
 
@@ -30,7 +30,7 @@ if (!in_array(7, $sessaoPermissoes)) {
 
 if (getenv("REQUEST_METHOD") != "POST" or !$_POST['titulo']) {
 	// retorna mensagem de erro
-	header('Location: /cms-base/administracao/nao-encontrado');
+	header('Location: /administracao/nao-encontrado');
 	exit;
 }
 
@@ -135,9 +135,9 @@ if (empty($_POST['sitePalavraschave'])) {
 if (count($erro) != 0) {
 	// retorna msgErro
 	foreach ($erro as $idErro => $msgErro) {
-		setcookie("msgErro['$idErro']", $msgErro, time() + 10, '/cms-base/administracao/configuracoes/');
+		setcookie("msgErro['$idErro']", $msgErro, time() + 10, '/administracao/configuracoes/');
 	}
-	header('Location: /cms-base/administracao/configuracoes/');
+	header('Location: /administracao/configuracoes/');
 	exit;
 }
 
@@ -154,7 +154,7 @@ $cabecalho .= "$" . "siteAutor = \"" . $siteAutor . "\";\n";
 $cabecalho .= "$" . "siteEmail = \"" . $siteEmail . "\";\n";
 $cabecalho .= "$" . "siteUrlcompleta = " . "$" . "_SERVER['HTTP_HOST'] . " . "$" . "_SERVER['REQUEST_URI'];\n";
 $cabecalho .= "?>";
-$arquivoCabecalho = fopen($_SERVER['DOCUMENT_ROOT'] . "/cms-base/include/geral/php/cabecalho.php","w+"); 
+$arquivoCabecalho = fopen($_SERVER['DOCUMENT_ROOT'] . "/include/geral/php/cabecalho.php","w+"); 
 fwrite($arquivoCabecalho,$cabecalho);
 fclose($arquivoCabecalho);
 
@@ -162,8 +162,8 @@ fclose($arquivoCabecalho);
 
 // REDIRECIONA PARA A PAGINA DE CONFIGURACOES ################################################
 
-setcookie('msgOk', 'Configurações salvas com sucesso.', time() + 10, '/cms-base/administracao/configuracoes/');
-header('Location: /cms-base/administracao/configuracoes/');
+setcookie('msgOk', 'Configurações salvas com sucesso.', time() + 10, '/administracao/configuracoes/');
+header('Location: /administracao/configuracoes/');
 exit;
 
 // ###########################################################################################

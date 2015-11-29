@@ -7,8 +7,8 @@ if (!isset($_SESSION)) {
 // Checa a validade do login na classe loginUsuario
 require_once '../classes/login-usuario.php';
 if (!loginUsuario::verificaLogin()) {
-	setcookie('erroLogin', 'Autenticação necessária.', time() + 10, '/cms-base/administracao/login/');
-	header('Location: /cms-base/administracao/login');
+	setcookie('erroLogin', 'Autenticação necessária.', time() + 10, '/administracao/login/');
+	header('Location: /administracao/login');
 	exit;
 } else {
 	require_once '../include/login/php/login-atualiza.php';

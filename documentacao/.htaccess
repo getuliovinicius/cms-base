@@ -1,4 +1,4 @@
-############ CMS-Base /cms-base/documentacao ############
+############ CMS-Base /documentacao ############
 
 ############### "Compreensao de arquivos" ###############
 
@@ -50,7 +50,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 ## "paginas nao encontradas"
 #
 
-ErrorDocument 404 /cms-base/documentacao/nao-encontrado.php
+ErrorDocument 404 /documentacao/nao-encontrado.php
 
 #
 ## "PAGINAS DA DOCUMENTACAO"

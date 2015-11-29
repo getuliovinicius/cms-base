@@ -9,8 +9,8 @@ if (in_array(6, $sessaoPermissoes) and isset($modulo['paginaId'])) {
 	$usrId = $sessaoId;
 } else {
 	// retorna mensagem de erro
-	setcookie('msgErro[privilegio]', 'Acesso restrito a usuários com permissão.', time() + 10, '/cms-base/administracao/usuarios');
-	header('Location: /cms-base/administracao/usuarios');
+	setcookie('msgErro[privilegio]', 'Acesso restrito a usuários com permissão.', time() + 10, '/administracao/usuarios');
+	header('Location: /administracao/usuarios');
 	exit;
 }
 
@@ -29,8 +29,8 @@ $sqlFuncoes = new sqlFuncoes();
 $sqlFuncoes->setSql($sqlUsuario);
 $usrDados = $sqlFuncoes->listaRegistros(true);
 if (empty($usrDados)) {
-	setcookie('msgErro[usrId]', 'Registro do usuário não encontrado.', time() + 10, '/cms-base/administracao/usuarios');
-	header('Location: /cms-base/administracao/usuarios');
+	setcookie('msgErro[usrId]', 'Registro do usuário não encontrado.', time() + 10, '/administracao/usuarios');
+	header('Location: /administracao/usuarios');
 	exit;
 }
 unset($sqlFuncoes);
@@ -60,10 +60,10 @@ $dataCompleta = strftime("%A, %d de %B de %Y");
 <title><?php echo $siteTitulo; ?> - Administração | Editar usuário</title>
 <!-- InstanceEndEditable -->
 <meta name="robots" content="noindex,nofollow" />
-<link rel="stylesheet" type="text/css" media="screen" href="/cms-base/administracao/css/estilo.css"/>
+<link rel="stylesheet" type="text/css" media="screen" href="/administracao/css/estilo.css"/>
 <!-- InstanceBeginEditable name="head" -->
-<script type="text/javascript" src="/cms-base/js/administracao/menu-modulos.js"></script>
-<script type="text/javascript" src="/cms-base/js/administracao/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript" src="/js/administracao/menu-modulos.js"></script>
+<script type="text/javascript" src="/js/administracao/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
 <script type="text/javascript">
 tinyMCE.init({
 	language : "pt",
@@ -86,7 +86,7 @@ tinyMCE.init({
 	<!-- INICIO DO CABECALHO -->
 	<header id="cabecalho">
 		<div id="cabecalhoLogo">
-			<p><strong><a href="/cms-base/administracao" title="Página inicial da administração do site."><?php echo $siteTitulo; ?></a></strong></p>
+			<p><strong><a href="/administracao" title="Página inicial da administração do site."><?php echo $siteTitulo; ?></a></strong></p>
 		</div>
 		<div id="cabecalhoLogin">
 			<!-- InstanceBeginEditable name="cabecalhoLogin" -->
@@ -117,9 +117,9 @@ tinyMCE.init({
 		<section id="conteudoAplicacao">
 			<!-- InstanceBeginEditable name="conteudoAplicacao" -->
 			<nav class="fontPequena">
-				<p class="fontPequena"><a href="/cms-base/administracao">Painel</a> &gt; <a href="/cms-base/administracao/usuarios">Usuários</a> &gt; Editar usuário</p>
+				<p class="fontPequena"><a href="/administracao">Painel</a> &gt; <a href="/administracao/usuarios">Usuários</a> &gt; Editar usuário</p>
 			</nav>
-			<h1 class="destaqueAplicacao"><img src="/cms-base/imagens/administracao/icones/usuario-editar.png" alt="Editar usuário" width="16" height="16" /> Editar dados do usu&aacute;rio "<?php echo $usrDados[2]; ?>"</h1>
+			<h1 class="destaqueAplicacao"><img src="/imagens/administracao/icones/usuario-editar.png" alt="Editar usuário" width="16" height="16" /> Editar dados do usu&aacute;rio "<?php echo $usrDados[2]; ?>"</h1>
 <?php
 // mensagens de confirmacao
 if (isset($_COOKIE['msgOk'])) {
@@ -135,7 +135,7 @@ if (isset($_COOKIE['msgErro'])) {
 }
 ?>
 			<h2>Foto</h2>
-			<form name="usuario-editar-foto" id="usuario-editar-foto" action="/cms-base/administracao/envio/usuario-editar-foto.php" method="post" enctype="multipart/form-data">
+			<form name="usuario-editar-foto" id="usuario-editar-foto" action="/administracao/envio/usuario-editar-foto.php" method="post" enctype="multipart/form-data">
 				<input name="usrId" type="hidden" value="<?php echo $usrDados[0]; ?>">
 				<input name="usrFotoantiga" type="hidden" value="<?php echo $usrDados[5]; ?>">
 				<input name="usrApelido" type="hidden" value="<?php echo $usrDados[4]; ?>">
@@ -153,7 +153,7 @@ if (isset($_COOKIE['msgErro'])) {
 				</div>
 			</form>
 			<h2>Outros Dados</h2>
-			<form name="usuario-editar" id="usuario-editar" action="/cms-base/administracao/envio/usuario-editar.php" method="post">
+			<form name="usuario-editar" id="usuario-editar" action="/administracao/envio/usuario-editar.php" method="post">
 				<input name="usrId" type="hidden" value="<?php echo $usrDados[0]; ?>">
 				<div class="formLinhas">
 					<p>

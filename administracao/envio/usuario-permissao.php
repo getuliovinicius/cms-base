@@ -7,8 +7,8 @@ if (!isset($_SESSION)) {
 // Checa a validade do login na classe loginUsuario
 require_once '../../classes/login-usuario.php';
 if (!loginUsuario::verificaLogin()) {
-	setcookie('erroLogin', 'Autenticação nescessária.', time() + 10, '/cms-base/administracao/login/');
-	header('Location: /cms-base/administracao/login');
+	setcookie('erroLogin', 'Autenticação nescessária.', time() + 10, '/administracao/login/');
+	header('Location: /administracao/login');
 } else {
 	require_once '../../include/login/php/login-atualiza.php';
 }
@@ -19,8 +19,8 @@ if (!loginUsuario::verificaLogin()) {
 
 if (!in_array(5, $sessaoPermissoes)) {
 	// retorna mensagem de erro
-	setcookie('msgErro[privilegio]', 'Acesso restrito a usuários com permissão.', time() + 10, '/cms-base/administracao/usuarios');
-	header('Location: /cms-base/administracao/usuarios');
+	setcookie('msgErro[privilegio]', 'Acesso restrito a usuários com permissão.', time() + 10, '/administracao/usuarios');
+	header('Location: /administracao/usuarios');
 	exit;
 }
 
@@ -30,7 +30,7 @@ if (!in_array(5, $sessaoPermissoes)) {
 
 if (getenv("REQUEST_METHOD") != "POST" or !$_POST['permissao']) {
 	// retorna mensagem de erro
-	header('Location: /cms-base/administracao/nao-encontrado');
+	header('Location: /administracao/nao-encontrado');
 	exit;
 }
 
@@ -50,8 +50,8 @@ $sqlFuncoes = new sqlFuncoes();
 $sqlFuncoes->setSql($sqlUsuario);
 $usrDados = $sqlFuncoes->listaRegistros(true);
 if (empty($usrDados)) {
-	setcookie('msgErro[usrId]', 'Registro do usuário não encontrado.', time() + 10, '/cms-base/administracao/usuarios');
-	header('Location: /cms-base/administracao/usuarios');
+	setcookie('msgErro[usrId]', 'Registro do usuário não encontrado.', time() + 10, '/administracao/usuarios');
+	header('Location: /administracao/usuarios');
 	exit;
 }
 unset($sqlFuncoes);
@@ -124,8 +124,8 @@ foreach ($permissoesPossiveis as $chave => $permissao) {
 
 // REDIRECIONA PARA A PAGINA DE PERMISSOES DO USUARIO ########################################
 
-setcookie('msgOk', 'Permissões alteradas com sucessos.', time() + 10, '/cms-base/administracao/usuario-permissao/');
-header("Location: /cms-base/administracao/usuario-permissao/" . $usrId);
+setcookie('msgOk', 'Permissões alteradas com sucessos.', time() + 10, '/administracao/usuario-permissao/');
+header("Location: /administracao/usuario-permissao/" . $usrId);
 exit;
 
 // ###########################################################################################

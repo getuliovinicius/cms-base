@@ -50,9 +50,9 @@ $dataCompleta = strftime("%A, %d de %B de %Y");
 <title><?php echo $siteTitulo; ?> - Administração | Usuários</title>
 <!-- InstanceEndEditable -->
 <meta name="robots" content="noindex,nofollow" />
-<link rel="stylesheet" type="text/css" media="screen" href="/cms-base/administracao/css/estilo.css"/>
+<link rel="stylesheet" type="text/css" media="screen" href="/administracao/css/estilo.css"/>
 <!-- InstanceBeginEditable name="head" -->
-<script type="text/javascript" src="/cms-base/js/administracao/menu-modulos.js"></script>
+<script type="text/javascript" src="/js/administracao/menu-modulos.js"></script>
 <!-- InstanceEndEditable -->
 </head>
 
@@ -61,7 +61,7 @@ $dataCompleta = strftime("%A, %d de %B de %Y");
 	<!-- INICIO DO CABECALHO -->
 	<header id="cabecalho">
 		<div id="cabecalhoLogo">
-			<p><strong><a href="/cms-base/administracao" title="Página inicial da administração do site."><?php echo $siteTitulo; ?></a></strong></p>
+			<p><strong><a href="/administracao" title="Página inicial da administração do site."><?php echo $siteTitulo; ?></a></strong></p>
 		</div>
 		<div id="cabecalhoLogin">
 			<!-- InstanceBeginEditable name="cabecalhoLogin" -->
@@ -83,9 +83,9 @@ $dataCompleta = strftime("%A, %d de %B de %Y");
 		<section id="conteudoAplicacao">
 			<!-- InstanceBeginEditable name="conteudoAplicacao" -->
 			<nav class="fontPequena">
-				<p><a href="/cms-base/administracao">Painel</a> &gt; Usuários</p>
+				<p><a href="/administracao">Painel</a> &gt; Usuários</p>
 			</nav>
-			<h1><img src="/cms-base/imagens/administracao/icones/usuarios.png" alt="Usuários" width="16" height="16"> Usuários</h1>
+			<h1><img src="/imagens/administracao/icones/usuarios.png" alt="Usuários" width="16" height="16"> Usuários</h1>
 <?php
 // mensagens de confirmacao
 if (isset($_COOKIE['msgOk'])) {
