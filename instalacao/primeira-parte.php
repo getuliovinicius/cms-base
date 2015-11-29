@@ -87,7 +87,7 @@ if (isset($_COOKIE['msgErro'])) {
 	<!-- FIM DO FORMULARIO -->
 	<!-- INICIO DO RODAPE -->
 	<footer id="rodape">
-		<p><strong>CMS-Base 1.0</strong> desenvolvido por <a href="http://twitter.com/getuliovinits" title="Perfil no twitter" target="_blank">Getulio Vinicius</a>.</p>
+		<p><strong>CMS-Base 0.5</strong> desenvolvido por <a href="http://twitter.com/getuliovinits" title="Perfil no twitter" target="_blank">Getulio Vinicius</a>.</p>
 	</footer>
 	<!-- FIM DO RODAPE -->
 </div>
