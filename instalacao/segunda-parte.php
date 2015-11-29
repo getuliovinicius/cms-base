@@ -11,13 +11,13 @@ if (isset($_COOKIE['instalacao'])) {
 	// carrega o arquivo com o titulo do site
 	include '../include/geral/php/cabecalho.php';
 	if ($siteTitulo != $_COOKIE['instalacao']) {
-		setcookie('msgErro[formulario]', 'Inicie a instala&ccedil;&atilde;o.', time() + 10, '/cms-base/instalacao/');
-		header('Location: /cms-base/instalacao/');
+		setcookie('msgErro[formulario]', 'Inicie a instala&ccedil;&atilde;o.', time() + 10, '/instalacao/');
+		header('Location: /instalacao/');
 		exit;
 	}
 } else {
-	setcookie('msgErro[formulario]', 'Inicie a instala&ccedil;&atilde;o.', time() + 10, '/cms-base/instalacao/');
-	header('Location: /cms-base/instalacao/');
+	setcookie('msgErro[formulario]', 'Inicie a instala&ccedil;&atilde;o.', time() + 10, '/instalacao/');
+	header('Location: /instalacao/');
 	exit;
 }
 
@@ -42,7 +42,7 @@ $dataCompleta = strftime("%A, %d de %B de %Y");
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 <meta name="robots" content="noindex,nofollow" />
-<link href="/cms-base/instalacao/css/estilo.css" rel="stylesheet" type="text/css" media="screen">
+<link href="/instalacao/css/estilo.css" rel="stylesheet" type="text/css" media="screen">
 </head>
 <body>
 <div id="todaPagina">
@@ -69,7 +69,7 @@ if (isset($_COOKIE['msgErro'])) {
 	echo "<p>";
 }
 ?>
-		<form action="/cms-base/instalacao/cfg-banco-de-dados.php" method="post" name="bancodedados">
+		<form action="/instalacao/cfg-banco-de-dados.php" method="post" name="bancodedados">
 			<input name="siteTitulo" type="hidden" value="<?php echo $siteTitulo; ?>">
 			<div class="formLinhas">
 				<p>

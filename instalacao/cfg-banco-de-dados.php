@@ -9,8 +9,8 @@ ATUALIZADO 	22/05/2012
 
 // retorna mensagem de erro
 if (getenv("REQUEST_METHOD") != "POST" or !$_POST['avancar']) {
-	setcookie('msgErro[formulario]', 'Inicie a instala&ccedil;&atilde;o.', time() + 10, '/cms-base/instalacao/');
-	header('Location: /cms-base/instalacao/');
+	setcookie('msgErro[formulario]', 'Inicie a instala&ccedil;&atilde;o.', time() + 10, '/instalacao/');
+	header('Location: /instalacao/');
 	exit;
 }
 
@@ -91,28 +91,28 @@ if (empty($_POST['senha'])) {
 if (count($erro) != 0)  {
 	// retorna msgErro
 	foreach ($erro as $idErro => $msgErro) {
-		setcookie("msgErro['$idErro']", $msgErro, time() + 10, '/cms-base/instalacao/segunda-parte.php');
+		setcookie("msgErro['$idErro']", $msgErro, time() + 10, '/instalacao/segunda-parte.php');
 	}
-	setcookie('instalacao', $siteTitulo, time() + 10, '/cms-base/instalacao/segunda-parte.php');
-	header('Location: /cms-base/instalacao/segunda-parte.php');
+	setcookie('instalacao', $siteTitulo, time() + 10, '/instalacao/segunda-parte.php');
+	header('Location: /instalacao/segunda-parte.php');
 	exit;
 } else {
 	// testa a conexao com o servidor do banco de dados
 	$testeConexao = mysql_connect($servidor, $usuario, $senha);
 	if (!$testeConexao) {
 		$erro['banco'] = "Não foi poss&iacute;vel conectar ao servidor do Banco de Dados: " . mysql_error();
-		setcookie('msgErro[banco]', $erro['banco'], time() + 10, '/cms-base/instalacao/segunda-parte.php');
-		setcookie('instalacao', $siteTitulo, time() + 10, '/cms-base/instalacao/segunda-parte.php');
-		header('Location: /cms-base/instalacao/segunda-parte.php');
+		setcookie('msgErro[banco]', $erro['banco'], time() + 10, '/instalacao/segunda-parte.php');
+		setcookie('instalacao', $siteTitulo, time() + 10, '/instalacao/segunda-parte.php');
+		header('Location: /instalacao/segunda-parte.php');
 		exit;
 	}
 	// testa a selecao da base de dados informada
 	$testeBase = mysql_select_db($banco);
 	if (!$testeBase) {
 		$erro['banco'] = "Não foi poss&iacute;vel conectar ao Banco de Dados informado: " . mysql_error();
-		setcookie('msgErro[banco]', $erro['banco'], time() + 10, '/cms-base/instalacao/segunda-parte.php');
-		setcookie('instalacao', $siteTitulo, time() + 10, '/cms-base/instalacao/segunda-parte.php');
-		header('Location: /cms-base/instalacao/segunda-parte.php');
+		setcookie('msgErro[banco]', $erro['banco'], time() + 10, '/instalacao/segunda-parte.php');
+		setcookie('instalacao', $siteTitulo, time() + 10, '/instalacao/segunda-parte.php');
+		header('Location: /instalacao/segunda-parte.php');
 		exit;
 	}
 }
@@ -182,7 +182,7 @@ $mysqlConecta .= "	private function getConexao() { return $" . "this->conexao; }
 $mysqlConecta .= "	private function getErro() { return $" . "this->erro; }\n";
 $mysqlConecta .= "}\n";
 $mysqlConecta .= "?>";
-$arquivoConecta = fopen($_SERVER['DOCUMENT_ROOT'] . "/cms-base/classes/mysql-conecta.php","w+"); 
+$arquivoConecta = fopen($_SERVER['DOCUMENT_ROOT'] . "/classes/mysql-conecta.php","w+"); 
 fwrite($arquivoConecta,$mysqlConecta);
 fclose($arquivoConecta);
 
@@ -190,9 +190,9 @@ fclose($arquivoConecta);
 
 // CHECAR A CRIACAO DO ARQUIVO mysql-conecta.php #############################################
 
-if (!file_exists($_SERVER['DOCUMENT_ROOT'] . "/cms-base/classes/mysql-conecta.php") == true) {
-	setcookie('msgErro[siteArquivoconecta]', 'Por motivos não previstos, a CONEX&Atilde;O com o banco de dados não foi salva.', time() + 10, '/cms-base/instalacao/');
-	header('Location: /cms-base/instalacao/');
+if (!file_exists($_SERVER['DOCUMENT_ROOT'] . "/classes/mysql-conecta.php") == true) {
+	setcookie('msgErro[siteArquivoconecta]', 'Por motivos não previstos, a CONEX&Atilde;O com o banco de dados não foi salva.', time() + 10, '/instalacao/');
+	header('Location: /instalacao/');
 	exit;
 }
 
@@ -312,8 +312,8 @@ foreach ($sqlTabelas as $tabela => $sql) {
 
 // REDIRECIONA PARA A TERCEIRA PARTE DA INSTALACAO ###########################################
 
-setcookie('instalacao', $siteTitulo, time() + 10, '/cms-base/instalacao/terceira-parte.php');
-header('Location: /cms-base/instalacao/terceira-parte.php');
+setcookie('instalacao', $siteTitulo, time() + 10, '/instalacao/terceira-parte.php');
+header('Location: /instalacao/terceira-parte.php');
 exit;	
 
 // ###########################################################################################

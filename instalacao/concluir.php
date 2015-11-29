@@ -11,13 +11,13 @@ if (isset($_COOKIE['instalacao'])) {
 	// carrega o arquivo com o titulo do site
 	include '../include/geral/php/cabecalho.php';
 	if ($siteTitulo != $_COOKIE['instalacao']) {
-		setcookie('msgErro[formulario]', 'Inicie a instala&ccedil;&atilde;o.', time() + 10, '/cms-base/instalacao/');
-		header('Location: /cms-base/instalacao/');
+		setcookie('msgErro[formulario]', 'Inicie a instala&ccedil;&atilde;o.', time() + 10, '/instalacao/');
+		header('Location: /instalacao/');
 		exit;
 	}
 } else {
-	setcookie('msgErro[formulario]', 'Inicie a instala&ccedil;&atilde;o.', time() + 10, '/cms-base/instalacao/');
-	header('Location: /cms-base/instalacao/');
+	setcookie('msgErro[formulario]', 'Inicie a instala&ccedil;&atilde;o.', time() + 10, '/instalacao/');
+	header('Location: /instalacao/');
 	exit;
 }
 
@@ -42,7 +42,7 @@ $dataCompleta = strftime("%A, %d de %B de %Y");
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 <meta name="robots" content="noindex,nofollow" />
-<link href="/cms-base/instalacao/css/estilo.css" rel="stylesheet" type="text/css" media="screen">
+<link href="/instalacao/css/estilo.css" rel="stylesheet" type="text/css" media="screen">
 </head>
 <body>
 <div id="todaPagina">
@@ -59,9 +59,9 @@ $dataCompleta = strftime("%A, %d de %B de %Y");
 		<h1>O site "<?php echo $siteTitulo; ?>" esta configurado!</h1>
 		<p class="msgOk"><strong>A 3ª Parte foi conclu&iacute;da com sucesso!</strong></p>
 		<p>Obrigado por ter instalado o gerenciador de sites <strong>CMS-Base</strong>. Esperamos que use-o durante muito tempo.</p>
-		<p>Dedique mais 5 minutos para <a href="/cms-base/documentacao/notas-versao" title="Clique para ler as notas da versão."><strong>LER AS NOTAS DA VERSÃO</strong></a>.</p>
-		<p>Você pode acessar o painel de controle pelo endereço <strong>"http://<?php echo $_SERVER['HTTP_HOST']; ?>/cms-base/administracao"</strong> ou agora mesmo seguindo o link:</p>
-		<p><a href="/cms-base/administracao/login" title="Clique para fazer login e administrar o site."><strong>CLIQUE AQUI PARA ACESSAR O PAINEL DE CONTROLE</strong></a></p>
+		<p>Dedique mais 5 minutos para <a href="/documentacao/notas-versao" title="Clique para ler as notas da versão."><strong>LER AS NOTAS DA VERSÃO</strong></a>.</p>
+		<p>Você pode acessar o painel de controle pelo endereço <strong>"http://<?php echo $_SERVER['HTTP_HOST']; ?>/administracao"</strong> ou agora mesmo seguindo o link:</p>
+		<p><a href="/administracao/login" title="Clique para fazer login e administrar o site."><strong>CLIQUE AQUI PARA ACESSAR O PAINEL DE CONTROLE</strong></a></p>
 		<p><strong>Atenciosamente, Getulio Vinicius.</strong></p>
 		<!-- InstanceEndEditable -->
 	</section>

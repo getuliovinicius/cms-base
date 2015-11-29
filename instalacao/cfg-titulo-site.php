@@ -9,8 +9,8 @@ ATUALIZADO 	20/05/2012
 
 // retorna mensagem de erro
 if (getenv("REQUEST_METHOD") != "POST" or !$_POST['avancar']) {
-	setcookie('msgErro[formulario]', 'Inicie a instala&ccedil;&atilde;o.', time() + 10, '/cms-base/instalacao/');
-	header('Location: /cms-base/instalacao/');
+	setcookie('msgErro[formulario]', 'Inicie a instala&ccedil;&atilde;o.', time() + 10, '/instalacao/');
+	header('Location: /instalacao/');
 	exit;
 }
 
@@ -76,9 +76,9 @@ if (empty($_POST['sitePalavraschave'])) {
 if (count($erro) != 0) {
 	// retorna msgErro
 	foreach ($erro as $idErro => $msgErro) {
-		setcookie("msgErro['$idErro']", $msgErro, time() + 10, '/cms-base/instalacao/primeira-parte.php');
+		setcookie("msgErro['$idErro']", $msgErro, time() + 10, '/instalacao/primeira-parte.php');
 	}
-	header('Location: /cms-base/instalacao/primeira-parte.php');
+	header('Location: /instalacao/primeira-parte.php');
 	exit;
 }
 
@@ -92,7 +92,7 @@ $cabecalho .= "$" . "siteTitulo = \"" . $siteTitulo . "\";\n";
 $cabecalho .= "$" . "siteSlogan = \"" . $siteSlogan . "\";\n";
 $cabecalho .= "$" . "siteDescricao = \"" . $siteDescricao . "\";\n";
 $cabecalho .= "$" . "sitePalavraschave = \"" . $sitePalavraschave . "\";\n";
-$arquivoCabecalho = fopen($_SERVER['DOCUMENT_ROOT'] . "/cms-base/include/geral/php/cabecalho.php","w+"); 
+$arquivoCabecalho = fopen($_SERVER['DOCUMENT_ROOT'] . "/include/geral/php/cabecalho.php","w+"); 
 fwrite($arquivoCabecalho,$cabecalho);
 fclose($arquivoCabecalho);
 
@@ -100,8 +100,8 @@ fclose($arquivoCabecalho);
 $robots = "User-agent: *\n";
 $robots .= "Disallow: /*?\n";
 $robots .= "Disallow: /*.php$\n";
-$robots .= "Disallow: /cms-base/administracao/\n";
-$robots .= "Sitemap: http://" . $_SERVER['HTTP_HOST'] . "/cms-base/sitemap.xml";
+$robots .= "Disallow: /administracao/\n";
+$robots .= "Sitemap: http://" . $_SERVER['HTTP_HOST'] . "/sitemap.xml";
 $arquivoRobots = fopen($_SERVER['DOCUMENT_ROOT'] . "/robots.txt","w+"); 
 fwrite($arquivoRobots,$robots);
 fclose($arquivoRobots);
@@ -117,7 +117,7 @@ $sitemap .= "<url><loc>http://" . $_SERVER['HTTP_HOST'] . "/</loc><lastmod>" . s
 $sitemap .= "<url><loc>http://" . $_SERVER['HTTP_HOST'] . "/contato</loc><priority>0.7</priority></url>\n";
 $sitemap .= "<url><loc>http://" . $_SERVER['HTTP_HOST'] . "/sitemap</loc><lastmod>" . strftime("%Y-%m-%d") . "</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>\n";
 $sitemap .= "</urlset>";
-$arquivoSitemap = fopen($_SERVER['DOCUMENT_ROOT'] . "/cms-base/sitemap.xml","w+"); 
+$arquivoSitemap = fopen($_SERVER['DOCUMENT_ROOT'] . "/sitemap.xml","w+"); 
 fwrite($arquivoSitemap,$sitemap);
 fclose($arquivoSitemap);
 
@@ -132,7 +132,7 @@ $rss .= "<lastBuildDate>" . date(DATE_RFC2822) . "</lastBuildDate>\n";
 $rss .= "<language>pt-br</language>\n";
 $rss .= "<atom:link href=\"http://" . $_SERVER['HTTP_HOST'] . "/feed.xml\" rel=\"self\" type=\"application/rss+xml\" />\n";
 $rss .= "</channel>\n</rss>\n";
-$arquivoFeed = fopen($_SERVER['DOCUMENT_ROOT'] . "/cms-base/feed.xml","w+"); 
+$arquivoFeed = fopen($_SERVER['DOCUMENT_ROOT'] . "/feed.xml","w+"); 
 fwrite($arquivoFeed,$rss);
 fclose($arquivoFeed);
 
@@ -140,13 +140,13 @@ fclose($arquivoFeed);
 
 // CHECAR A CRIACAO DOS ARQUIVOS CRSF ########################################################
 
-if (file_exists($_SERVER['DOCUMENT_ROOT'] . "/cms-base/include/geral/php/cabecalho.php") == true and file_exists($_SERVER['DOCUMENT_ROOT'] . "/robots.txt") == true and file_exists($_SERVER['DOCUMENT_ROOT'] . "/cms-base/sitemap.xml") == true and file_exists($_SERVER['DOCUMENT_ROOT'] . "/cms-base/sitemap.xml") == true) {
-	setcookie('instalacao', $siteTitulo, time() + 10, '/cms-base/instalacao/segunda-parte.php');
-	header('Location: /cms-base/instalacao/segunda-parte.php');
+if (file_exists($_SERVER['DOCUMENT_ROOT'] . "/include/geral/php/cabecalho.php") == true and file_exists($_SERVER['DOCUMENT_ROOT'] . "/robots.txt") == true and file_exists($_SERVER['DOCUMENT_ROOT'] . "/sitemap.xml") == true and file_exists($_SERVER['DOCUMENT_ROOT'] . "/sitemap.xml") == true) {
+	setcookie('instalacao', $siteTitulo, time() + 10, '/instalacao/segunda-parte.php');
+	header('Location: /instalacao/segunda-parte.php');
 	exit;	
 } else {
-	setcookie('msgErro[siteArquivosCRSF]', 'Por motivos não previstos, o T&Iacute;TULO DO SITE e as demais configura&ccedil;&otilde;es descritivas n&atilde;o foram salvas.', time() + 10, '/cms-base/instalacao/primeira-parte.php');
-	header('Location: /cms-base/instalacao/primeira-parte.php');
+	setcookie('msgErro[siteArquivosCRSF]', 'Por motivos não previstos, o T&Iacute;TULO DO SITE e as demais configura&ccedil;&otilde;es descritivas n&atilde;o foram salvas.', time() + 10, '/instalacao/primeira-parte.php');
+	header('Location: /instalacao/primeira-parte.php');
 	exit;
 }
 

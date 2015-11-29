@@ -9,8 +9,8 @@ ATUALIZADO 	20/05/2012
 
 // retorna mensagem de erro
 if (getenv("REQUEST_METHOD") != "POST" or !$_POST['avancar']) {
-	setcookie('msgErro[formulario]', 'Inicie a instala&ccedil;&atilde;o.', time() + 10, '/cms-base/instalacao/');
-	header('Location: /cms-base/instalacao/');
+	setcookie('msgErro[formulario]', 'Inicie a instala&ccedil;&atilde;o.', time() + 10, '/instalacao/');
+	header('Location: /instalacao/');
 	exit;
 }
 
@@ -105,7 +105,7 @@ if (empty($_POST['usrLogin'])) {
 }
 
 // validar a imagem
-$usrFoto = "/cms-base/imagens/usuarios/administrador.png";
+$usrFoto = "/imagens/usuarios/administrador.png";
 
 // validar a descricao
 $usrDescricao = "Administrador do site.";
@@ -133,10 +133,10 @@ if (empty($_POST['usrSenha1']) or ($_POST['usrSenha1'] != $_POST['usrSenha2'])) 
 if (count($erro) != 0) {
 	// retorna msgErro
 	foreach ($erro as $idErro => $msgErro) {
-		setcookie("msgErro['$idErro']", $msgErro, time() + 10, '/cms-base/instalacao/terceira-parte.php');
+		setcookie("msgErro['$idErro']", $msgErro, time() + 10, '/instalacao/terceira-parte.php');
 	}
-	setcookie('instalacao', $siteTitulo, time() + 10, '/cms-base/instalacao/terceira-parte.php');
-	header('Location: /cms-base/instalacao/terceira-parte.php');
+	setcookie('instalacao', $siteTitulo, time() + 10, '/instalacao/terceira-parte.php');
+	header('Location: /instalacao/terceira-parte.php');
 	exit;
 }
 
@@ -186,7 +186,7 @@ $cabecalho .= "$" . "siteAutor = \"" . $usrNome . "\";\n";
 $cabecalho .= "$" . "siteEmail = \"" . $usrEmail . "\";\n";
 $cabecalho .= "$" . "siteUrlcompleta = " . "$" . "_SERVER['HTTP_HOST'] . " . "$" . "_SERVER['REQUEST_URI'];\n";
 $cabecalho .= "?>";
-$arquivoCabecalho = fopen($_SERVER['DOCUMENT_ROOT'] . "/cms-base/include/geral/php/cabecalho.php","a"); 
+$arquivoCabecalho = fopen($_SERVER['DOCUMENT_ROOT'] . "/include/geral/php/cabecalho.php","a"); 
 fwrite($arquivoCabecalho,$cabecalho);
 fclose($arquivoCabecalho);
 
@@ -197,13 +197,13 @@ copy($_SERVER['DOCUMENT_ROOT'] . "/cms-base.htaccess", $_SERVER['DOCUMENT_ROOT']
 
 // CHECAR A CRIACAO DOS ARQUIVOS CH ##########################################################
 
-if (file_exists($_SERVER['DOCUMENT_ROOT'] . "/cms-base/include/geral/php/cabecalho.php") == true and file_exists($_SERVER['DOCUMENT_ROOT'] . "/.htaccess") == true) {
-	setcookie('instalacao', $siteTitulo, time() + 10, '/cms-base/instalacao/concluir.php');
-	header('Location: /cms-base/instalacao/concluir.php');
+if (file_exists($_SERVER['DOCUMENT_ROOT'] . "/include/geral/php/cabecalho.php") == true and file_exists($_SERVER['DOCUMENT_ROOT'] . "/.htaccess") == true) {
+	setcookie('instalacao', $siteTitulo, time() + 10, '/instalacao/concluir.php');
+	header('Location: /instalacao/concluir.php');
 	exit;	
 } else {
-	setcookie('msgErro[siteArquivosCAH]', 'Por motivos não previstos, o ADMINISTRADOR do site não foi salvo.', time() + 10, '/cms-base/instalacao/');
-	header('Location: /cms-base/instalacao/');
+	setcookie('msgErro[siteArquivosCAH]', 'Por motivos não previstos, o ADMINISTRADOR do site não foi salvo.', time() + 10, '/instalacao/');
+	header('Location: /instalacao/');
 	exit;
 }
 
