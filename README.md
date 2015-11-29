@@ -1,6 +1,6 @@
 # cms-base
 
-### Este é o meu primeiro projeto pessoal de desenvolvimento, "cms-base".
+### Este é o meu primeiro projeto pessoal de desenvolvimento, "cms-base", para gerir conteúdo de um blog simples.
 
 Este é um projeto que eu desenvolvi entre os anos de 2009 e 2012. Minha intenção era criar um gerenciador de conteúdo simples em PHP para uma página/blog de minha autoria juntamente com dois tios, Marcos e Fabio. Inicialmente o blog era em html rudimentar e eu não entendia muito bem o que era o Wordpress, o Drupal e por ai vai. Com o passar do tempo foi necessário criar algo dinâmico, dai surgiu o projeto pessoal **cms-base**.
 
