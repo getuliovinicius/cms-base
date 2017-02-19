@@ -1,0 +1,14 @@
+site_name: CMS-Base
+site_description: Projeto que não foi concluído.
+site_author: Getúlio Vinicius <getuliovinits@gmail.com>
+google_analytics: ['UA-70830801-1', 'getuliovinicius.github.io/cms-base/']
+repo_url: https://github.com/getuliovinicius/cms-base
+repo_name: GitHub
+edit_uri: blob/master/docs/mds/
+remote_branch: gh-pages
+remote_name: origin
+docs_dir: 'mds'
+pages:
+  - Inicio: index.md
+theme: readthedocs
+
