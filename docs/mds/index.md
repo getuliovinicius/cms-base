@@ -34,7 +34,7 @@ O plano original era que ao final eu tivesse costruido:
 
 * Lista de botões para compartilhar as postagens*
 
-Eu não conclui o projeto e o blog **circoesturdia.com**, onde publicávamos as tirinhas do "palhaço Lero Lero e do Capitão Lorota" foi descontinuado, por causa da morte do meu tio Fábio, o palhaço Lero Lero de Bricabraques.
+Eu não conclui o projeto e o blog **circoesturdia.com**, onde publicávamos as tirinhas do "palhaço Lero Lero e do Capitão Lorota" foi descontinuado por causa da morte do meu tio Fábio, o palhaço Lero Lero de Bricabraques.
 
 ## Vida que segue...
 
